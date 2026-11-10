@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>關於 three-cat-everything</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fbfaf7;
+        --fg: #1d1b18;
+        --muted: #6b665e;
+        --accent: #d6343f;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1c1b19;
+          --fg: #f1eee8;
+          --muted: #a39d93;
+          --accent: #ff5c66;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 24px 28px;
+        background: var(--bg);
+        color: var(--fg);
+        font: 14px/1.6 "Segoe UI", "Microsoft JhengHei UI", system-ui, sans-serif;
+        user-select: none;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      img {
+        width: 64px;
+        height: 64px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 18px;
+      }
+      .ver {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      p {
+        margin: 16px 0 0;
+      }
+      .credit {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="/app-icon.png" alt="" />
+      <div>
+        <h1>three-cat-everything</h1>
+        <div class="ver" id="ver"></div>
+      </div>
+    </header>
+    <p>漲停小貓，在你的螢幕上一直跳。<br />單擊放音樂，右鍵看更多。</p>
+    <p class="credit">
+      Original animation by
+      <a data-href="https://www.tiktok.com/@meowtakeover">@meowtakeover</a>
+    </p>
+    <p>
+      <a data-href="https://github.com/baabaa-works/three-cat-everything">github.com/baabaa-works/three-cat-everything</a>
+    </p>
+    <script type="module" src="/src/about.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "three-cat-everything",
+  "version": "0.1.0",
+  "identifier": "works.baabaa.three-cat-everything",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "shortDescription": "Limit-up kittens desktop overlay",
+    "copyright": "Original animation by @meowtakeover",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["TradChinese", "English"]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>three-cat-everything</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: grab;
+      }
+      video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        pointer-events: none;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="cats" autoplay loop muted playsinline disablepictureinpicture></video>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

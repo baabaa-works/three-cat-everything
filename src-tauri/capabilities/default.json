@@ -1,0 +1,11 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Cat windows and the about window",
+  "windows": ["cat-*", "about"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "opener:default"
+  ]
+}

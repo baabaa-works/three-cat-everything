@@ -1,0 +1,101 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Noto Sans TC";
+      src: url("assets/fonts/NotoSansTC.ttf") format("truetype");
+      font-weight: 100 900;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      font-family: "Noto Sans TC", "Inter", sans-serif;
+      color: #ffffff;
+    }
+    #end-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 13, 20, 0.82);
+    }
+    #end-cats {
+      position: absolute;
+      left: 330px;
+      top: 290px;
+      width: 420px;
+      height: 452px;
+    }
+    .end-row {
+      position: absolute;
+      left: 108px;
+      width: 864px;
+      text-align: center;
+    }
+    #end-tagline {
+      top: 770px;
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.2;
+      white-space: nowrap;
+      -webkit-text-stroke: 4px #000;
+      paint-order: stroke fill;
+    }
+    #end-tagline .hot {
+      color: #ff4d4f;
+    }
+    #end-link {
+      top: 880px;
+      left: 90px;
+      width: 900px;
+      height: 76px;
+      border-radius: 38px;
+      background: #ff4d4f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      white-space: nowrap;
+      box-shadow: 0 10px 30px rgba(255, 77, 79, 0.35);
+    }
+    #end-credits {
+      top: 1000px;
+      font-family: "Inter", sans-serif;
+      font-size: 28px;
+      line-height: 1.45;
+      color: #b8bfcc;
+    }
+    #end-disclaimer {
+      top: 1120px;
+      font-size: 28px;
+      font-weight: 500;
+      color: #8a93a3;
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="end-bg"></div>
+    <video
+      id="end-cats"
+      class="clip"
+      src="assets/cats.webm"
+      data-media-start="8.192"
+      muted
+      playsinline
+      data-start="0"
+      data-duration="3.5"
+    ></video>
+    <div id="end-tagline" class="end-row">三隻小貓・<span class="hot">免費下載</span>・Windows</div>
+    <div id="end-link" class="end-row">github.com/baabaa-works/three-cat-everything</div>
+    <div id="end-credits" class="end-row">Original animation by @meowtakeover · Green-screen by @igreenscreenthings</div>
+    <div id="end-disclaimer" class="end-row">非投資建議</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#end-bg", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#end-cats", { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 0.1);
+    tl.fromTo("#end-tagline", { opacity: 0, scaleX: 0.8 }, { opacity: 1, scaleX: 1, duration: 0.2, ease: "power3.out" }, 0.3);
+    tl.fromTo("#end-link", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0.5);
+    tl.fromTo(["#end-credits", "#end-disclaimer"], { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0.7);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

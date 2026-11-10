@@ -5,3 +5,8 @@ src-tauri/gen/
 .venv/
 raw/
 *.log
+
+# promo video: rendered output and heavy media stay local (rebuild from raw/promo, see docs/promo/)
+docs/promo/out/
+promo/assets/
+promo/.hyperframes/

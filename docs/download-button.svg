@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-label="下載 Windows 版">
+  <rect width="320" height="64" rx="12" fill="#1f883d"/>
+  <g fill="#fff" transform="translate(38 20)">
+    <rect width="11" height="11"/><rect x="13" width="11" height="11"/>
+    <rect y="13" width="11" height="11"/><rect x="13" y="13" width="11" height="11"/>
+  </g>
+  <text x="182" y="41" text-anchor="middle" fill="#fff" font-size="24" font-weight="700" font-family="'Microsoft JhengHei','PingFang TC','Noto Sans TC','Noto Sans CJK TC',sans-serif">下載 Windows 版</text>
+</svg>

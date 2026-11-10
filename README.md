@@ -7,7 +7,7 @@
 <p align="center"><img src="docs/demo.gif" width="300" alt="三隻小貓在 K 線上跳舞"></p>
 
 <p align="center">
-  <a href="https://github.com/baabaa-works/three-cat-everything/releases/latest/download/three-cat-everything-setup.exe"><img src="https://img.shields.io/badge/%E4%B8%8B%E8%BC%89_Windows_%E7%89%88-2ea44f?style=for-the-badge&logo=windows&logoColor=white" height="44" alt="下載 Windows 版"></a><br>
+  <a href="https://github.com/baabaa-works/three-cat-everything/releases/latest/download/three-cat-everything-setup.exe"><img src="docs/download-button.svg" width="280" alt="下載 Windows 版"></a><br>
   <sub>免費・約 4MB・Windows 10 / 11（64 位元）</sub>
 </p>
 

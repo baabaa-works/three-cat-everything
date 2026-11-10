@@ -12,7 +12,7 @@ use std::{
 use serde::{Deserialize, Serialize};
 use tauri::{
     menu::{CheckMenuItem, Menu, MenuItem, PredefinedMenuItem, Submenu},
-    tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
+    tray::TrayIconBuilder,
     AppHandle, Emitter, LogicalSize, Manager, PhysicalPosition, WebviewUrl, WebviewWindow,
     WebviewWindowBuilder, WindowEvent, Wry,
 };
@@ -403,17 +403,9 @@ fn build_tray(app: &AppHandle) -> tauri::Result<()> {
         .icon(app.default_window_icon().cloned().expect("app icon"))
         .tooltip("three-cat-everything")
         .menu(&menu)
-        .show_menu_on_left_click(false)
-        .on_tray_icon_event(|tray, event| {
-            if let TrayIconEvent::Click {
-                button: MouseButton::Left,
-                button_state: MouseButtonState::Up,
-                ..
-            } = event
-            {
-                set_hidden(tray.app_handle(), false);
-            }
-        })
+        // Left click opens the menu too: when cats are click-through the tray
+        // is the only way back, so it should be as easy to reach as possible.
+        .show_menu_on_left_click(true)
         .build(app)?;
     Ok(())
 }
@@ -421,7 +413,8 @@ fn build_tray(app: &AppHandle) -> tauri::Result<()> {
 fn refresh_tray(app: &AppHandle) {
     let state = app.state::<AppState>();
     let count = state.groups.lock().unwrap().len();
-    if let Some(add) = state.tray_add.lock().unwrap().as_ref() {
+    let add = state.tray_add.lock().unwrap().clone();
+    if let Some(add) = add {
         let _ = add.set_enabled(count < MAX_GROUPS);
     }
 }
@@ -444,7 +437,8 @@ fn handle_menu(app: &AppHandle, id: &str) {
             let want = !al.is_enabled().unwrap_or(false);
             let _ = if want { al.enable() } else { al.disable() };
             let now = al.is_enabled().unwrap_or(false);
-            if let Some(item) = app.state::<AppState>().tray_autostart.lock().unwrap().as_ref() {
+            let item = app.state::<AppState>().tray_autostart.lock().unwrap().clone();
+            if let Some(item) = item {
                 let _ = item.set_checked(now);
             }
             return;

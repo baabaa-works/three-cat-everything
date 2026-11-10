@@ -3,7 +3,11 @@ import { resolve } from "node:path";
 
 export default defineConfig({
   clearScreen: false,
-  server: { port: 1420, strictPort: true },
+  server: {
+    port: 1420,
+    strictPort: true,
+    watch: { ignored: ["**/src-tauri/**", "**/raw/**", "**/.venv/**"] },
+  },
   build: {
     target: "chrome120",
     rollupOptions: {
